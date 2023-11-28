@@ -7,12 +7,18 @@ import Typewriter from 'typewriter-effect';
 import { cn } from '@/src/utils/cn';
 
 import energy from '@/public/img/energy.png';
-import { BiosModal } from '../BiosModal';
+import { FullscreenModal } from './modals/FullscreenModal';
+import { LanguageModal } from './modals/LanguageModal';
+import { LoadingScreen } from '../LoadingScreen';
 
 const vt323 = VT323({ weight: ['400'], subsets: ['latin'] });
 
 export function Bios() {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isFullscreenModalOpen, setIsFullscreenModalOpen] =
+    useState<boolean>(false);
+  const [isLanguageModalOpen, setIsLanguageModalOpen] =
+    useState<boolean>(false);
 
   return (
     <section
@@ -21,7 +27,17 @@ export function Bios() {
         vt323.className
       )}
     >
-      <BiosModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      {isLoading && <LoadingScreen />}
+      <FullscreenModal
+        isModalOpen={isFullscreenModalOpen}
+        setIsModalOpen={setIsFullscreenModalOpen}
+        setIsLanguageModalOpen={setIsLanguageModalOpen}
+      />
+      <LanguageModal
+        isModalOpen={isLanguageModalOpen}
+        setIsModalOpen={setIsLanguageModalOpen}
+        setIsLoading={setIsLoading}
+      />
       <Image
         src={energy}
         alt="Energy Star Logo"
@@ -62,7 +78,7 @@ export function Bios() {
             .typeString('C:> ÍTALO COVAS<br />')
             .start()
             .callFunction(() => {
-              setIsModalOpen(true);
+              setIsFullscreenModalOpen(true);
             });
         }}
         options={{
