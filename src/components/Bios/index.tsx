@@ -31,12 +31,12 @@ export function Bios() {
       <FullscreenModal
         isModalOpen={isFullscreenModalOpen}
         setIsModalOpen={setIsFullscreenModalOpen}
-        setIsLanguageModalOpen={setIsLanguageModalOpen}
+        setIsLoading={setIsLoading}
       />
       <LanguageModal
         isModalOpen={isLanguageModalOpen}
         setIsModalOpen={setIsLanguageModalOpen}
-        setIsLoading={setIsLoading}
+        setIsFullscreenModalOpen={setIsFullscreenModalOpen}
       />
       <Image
         src={energy}
@@ -78,7 +78,7 @@ export function Bios() {
             .typeString('C:> ÍTALO COVAS<br />')
             .start()
             .callFunction(() => {
-              setIsFullscreenModalOpen(true);
+              setIsLanguageModalOpen(true);
             });
         }}
         options={{

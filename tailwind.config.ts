@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -8,7 +9,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        black: {
+          primary: '#181D21'
+        }
+      },
       backgroundImage: {
+        mountain: "url('../../public/img/wallpaper.jpeg')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'

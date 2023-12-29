@@ -11,14 +11,14 @@ interface LanguageModalProps {
 
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 
-  setIsLoading: Dispatch<SetStateAction<boolean>>;
+  setIsFullscreenModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 const vt323 = VT323({ weight: ['400'], subsets: ['latin'] });
 
 export function LanguageModal({
   isModalOpen,
   setIsModalOpen,
-  setIsLoading
+  setIsFullscreenModalOpen
 }: LanguageModalProps) {
   return (
     <Dialog.Root open={isModalOpen}>
@@ -47,20 +47,20 @@ export function LanguageModal({
                 onClick={() => {
                   //TODO: i18n
                   setIsModalOpen(false);
-                  setIsLoading(true);
+                  setIsFullscreenModalOpen(true);
                 }}
               >
-                BR
+                PT-BR
               </Dialog.Close>
               <Dialog.Close
                 className="cursor-pointertext-3xl rounded-none outline-none px-4 bg-[#FFFFFF] text-black"
                 onClick={() => {
                   //TODO: i18n
                   setIsModalOpen(false);
-                  setIsLoading(true);
+                  setIsFullscreenModalOpen(true);
                 }}
               >
-                US
+                EN-US
               </Dialog.Close>
             </footer>
           </div>

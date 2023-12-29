@@ -10,14 +10,14 @@ interface FullscreenModalProps {
 
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 
-  setIsLanguageModalOpen: Dispatch<SetStateAction<boolean>>;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
 const vt323 = VT323({ weight: ['400'], subsets: ['latin'] });
 
 export function FullscreenModal({
   isModalOpen,
   setIsModalOpen,
-  setIsLanguageModalOpen
+  setIsLoading
 }: FullscreenModalProps) {
   return (
     <Dialog.Root open={isModalOpen}>
@@ -45,7 +45,7 @@ export function FullscreenModal({
                 className="cursor-pointer  text-3xl rounded-none outline-none bg-[#FFFFFF] text-black px-4"
                 onClick={() => {
                   setIsModalOpen(false);
-                  setIsLanguageModalOpen(true);
+                  setIsLoading(true);
                 }}
               >
                 No
@@ -55,7 +55,7 @@ export function FullscreenModal({
                 onClick={() => {
                   document.body.requestFullscreen();
                   setIsModalOpen(false);
-                  setIsLanguageModalOpen(true);
+                  setIsLoading(true);
                 }}
               >
                 Yes
