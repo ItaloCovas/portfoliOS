@@ -29,9 +29,9 @@ export function Window() {
       onDrag={handleDrag}
       onStop={handleStop}
     >
-      <div className="w-fit">
-        <div className="handle">Drag from here</div>
-        <div>This readme is really dragging on...</div>
+      <div className="bg-black/60 backdrop-blur-sm backdrop-filter w-[500px] h-[400px] select-none text-white rounded-lg">
+        <div className="handle bg-red-500">Drag from here</div>
+        <div className="">This readme is really dragging on...</div>
       </div>
     </Draggable>
   );
