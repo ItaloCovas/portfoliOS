@@ -10,12 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        black: {
-          primary: '#181D21'
+        cblue: {
+          linkedin: '#0A66C2'
+        },
+        cblack: {
+          primary: '#181D21',
+          github: '#333333'
         }
       },
       backgroundImage: {
-        mountain: "url('../../public/img/wallpaper.jpeg')",
+        mountain: "url('../../public/img/wallpaper.jpg')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
